@@ -19,7 +19,7 @@ const Dashboard: React.FC = () => {
       <div className='max-h-screen flex-1 space-y-4 overflow-y-auto p-4 pt-6 md:p-8'>
         <div className='flex items-center justify-between space-y-2'>
           <h2 className='text-3xl font-bold tracking-tight'>Hi {user?.nickname}, Welcome back 👋</h2>
-          <Button variant='ghost' size='sm' type='button' onClick={() => handleLogout}>
+          <Button variant='ghost' size='sm' type='button' onClick={handleLogout}>
             Logout
           </Button>
         </div>

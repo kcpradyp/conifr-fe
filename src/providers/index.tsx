@@ -45,7 +45,7 @@ export default function AppProvider({ children }: { children: React.ReactNode })
             <ErrorBoundary FallbackComponent={ErrorFallback}>
               <QueryClientProvider client={queryClient}>
                 <ReactQueryDevtools />
-                <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+                <ThemeProvider defaultTheme='dark' storageKey='conifr-ui-theme'>
                   <SidebarProvider>{children}</SidebarProvider>
                 </ThemeProvider>
               </QueryClientProvider>
