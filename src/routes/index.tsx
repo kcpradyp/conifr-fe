@@ -6,7 +6,7 @@ import ProtectedRoute from './protectedRoute';
 
 const DashboardLayout = lazy(() => import('@/components/layouts/dashboardLayout'));
 const SignInPage = lazy(() => import('@/pages/auth/signin'));
-
+const FileManager = lazy(() => import('@/pages/fileManager'));
 // ----------------------------------------------------------------------
 
 export default function AppRouter() {
@@ -29,7 +29,7 @@ export default function AppRouter() {
         },
         {
           path: 'files',
-          element: <h1>File Manager</h1>,
+          element: <FileManager />,
         },
       ],
     },
