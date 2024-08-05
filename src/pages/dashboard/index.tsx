@@ -2,6 +2,7 @@ import PageHead from '@/components/shared/page-head.jsx';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.js';
+import { METABASE_SITE_URL } from '@/constants/config';
 import { LogoutOptions, useAuth0 } from '@auth0/auth0-react';
 
 const Dashboard: React.FC = () => {
@@ -12,6 +13,15 @@ const Dashboard: React.FC = () => {
     } as LogoutOptions;
     logout(options);
   };
+
+  //metabase.example.com/auth/sso?return_to=http%3A%2F%2Fmetabase.yourcompany.com%2Fdashboard%2F1
+
+  const iframeUrl =
+    METABASE_SITE_URL +
+    '/auth/sso?return_to=' +
+    METABASE_SITE_URL +
+    '&titled=false&top_nav=false&logo=false&header=false';
+  console.log(iframeUrl);
 
   return (
     <>
@@ -119,18 +129,8 @@ const Dashboard: React.FC = () => {
             </div>
             <div className='grid grid-cols-1 gap-4'>
               <Card className='col-span-1'>
-                <CardHeader>
-                  <CardTitle>Some more card</CardTitle>
-                </CardHeader>
                 <CardContent>
-                  <iframe
-                    src='https://analytics.conifr.com.au/public/dashboard/dcf29768-77b1-4caa-a667-6a8924b7a04e'
-                    width='100%'
-                    height={800}
-                    className='border-0'
-                    aria-hidden='false'
-                    tabIndex={0}
-                  />
+                  <iframe src={iframeUrl} width='100%' height={800} />
                 </CardContent>
               </Card>
             </div>
